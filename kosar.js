@@ -31,9 +31,11 @@ if (megrendelesek == null) {
   megrendelesek = [];
 }
 
-let osszesen = 0;
+
 
 function kosarKiir() {
+
+  let osszesen = 0;
 
   if (termekek==null)
   {ID("kosar").innerHTML=`<h1 style="color: red">Nem tud rendelni, üres a kosara!</h1>`;
