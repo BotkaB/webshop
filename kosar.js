@@ -124,7 +124,11 @@ function megrendeles() {
     }
 
   }
-
+  if (megvesz.length==0)
+  {ID("kosar").innerHTML=`<h1 style="color: red">Nem tud rendelni, üres a kosara!</h1>`;
+ 
+}
+else{
   megrendelesek.push(
 
     {
@@ -145,6 +149,7 @@ function megrendeles() {
 
   );
 
+
   
  
   localStorage.setItem("megrendelesek", JSON.stringify(megrendelesek))
@@ -152,4 +157,5 @@ function megrendeles() {
   window.location.replace( `megrendeles.html?id=${megrendelesek.length}`);
   return false;
 
+}
 }
