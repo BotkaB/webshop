@@ -8,19 +8,26 @@ function init() {
     termekMegnez(termekek);
     ID("keres").addEventListener("click",
         function () {
-            let x = ID("szoveg").value
+            let x = ID("szoveg").value.toLowerCase()
             let y = ""
             
             let keresett = [];
             for (let i = 0; i < termekek.length; i++) {
-                if (termekek[i].title.includes(x) || termekek[i].description.includes(x)) {
+                if (termekek[i].title.toLowerCase().includes(x) || termekek[i].description.toLowerCase().includes(x)) {
                     keresett.push(termekek[i])
                    
                 }
 
             }
 
+           // termekMegnez(keresett);
+           if(keresett.length==0){
+            ID("termekek").innerHTML = "Nincs találat."
+        }
+           else{
             termekMegnez(keresett);
+           }
+           
         }
     );
 
