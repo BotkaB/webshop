@@ -110,6 +110,7 @@ function megrendeles() {
   let megvesz = [];
   let termekara= 0;
   let datum = new Date().toLocaleString();
+  let osszesen=0;
   
   
     
@@ -117,6 +118,7 @@ function megrendeles() {
   for (let i = 0; i < termekek.length; i++) {
     if (termekek[i].mennyiseg != 0) {
       termekara=Math.round((termekek[i].price * termekek[i].mennyiseg) * 100) / 100;
+      osszesen+=termekara;
       megvesz.push({...termekek[i],termekara});
      
     }
